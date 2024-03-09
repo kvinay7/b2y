@@ -1,4 +1,4 @@
-package com.ems.b2y.model;
+package com.b2y.ems.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

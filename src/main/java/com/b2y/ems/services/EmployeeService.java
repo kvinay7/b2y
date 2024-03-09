@@ -1,27 +1,27 @@
-package com.ems.b2y.service;
+package com.b2y.ems.services;
 
-import com.ems.b2y.model.EmpJpa;
-import com.ems.b2y.model.Employee;
+import com.b2y.ems.dao.EmployeeJpa;
+import com.b2y.ems.entities.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class EmpService {
+public class EmployeeService {
         @Autowired
-        private EmpJpa empJpa;
+        private EmployeeJpa employeeJpa;
 
-        public List<Employee> getAllEmp() {
-            return empJpa.findAll();
+        public List<Employee> getAllEmployeees() {
+            return employeeJpa.findAll();
         }
 
         public Employee getEmployeeById(Integer id) {
-            return empJpa.findById(id)
+            return employeeJpa.findById(id)
                 .orElseThrow(() -> new NotFoundException("Employee not found with id: " + id));
         }
         public Employee createEmployee(Employee employee) {
-            return empJpa.save(employee);
+            return employeeJpa.save(employee);
         }
 
         public Employee updateEmployee(Integer id, Employee employee) {
@@ -30,11 +30,11 @@ public class EmpService {
             emp.setLast_name(employee.getLast_name());
             emp.setEmail(employee.getEmail());
             emp.setPhone(employee.getPhone());
-            return empJpa.save(employee);
+            return employeeJpa.save(employee);
         }
 
         public void deleteEmployee(Integer id) {
             Employee employee = getEmployeeById(id);
-            empJpa.delete(employee);
+            employeeJpa.delete(employee);
         }
     }
