@@ -1,4 +1,4 @@
-package com.b2y.ems.services;
+package com.b2y.ems.servicesImpl;
 public class NotFoundException extends RuntimeException {
     public NotFoundException(String message) {
         super(message);

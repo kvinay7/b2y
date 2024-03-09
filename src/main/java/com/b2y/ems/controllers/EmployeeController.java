@@ -1,14 +1,14 @@
 package com.b2y.ems.controllers;
 
-import com.b2y.ems.services.EmployeeService;
 import com.b2y.ems.entities.Employee;
+import com.b2y.ems.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/emp")
+@RequestMapping("/employee")
 public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
@@ -24,13 +24,13 @@ public class EmployeeController {
     }
 
     @PostMapping
-    public Employee createEmployee(@RequestBody Employee employee) {
-        return employeeService.createEmployee(employee);
+    public void createEmployee(@RequestBody Employee employee) {
+        employeeService.createEmployee(employee);
     }
 
-    @PutMapping("/{id}")
-    public Employee updateEmployee(@PathVariable("id") Integer id, @RequestBody Employee employee) {
-        return employeeService.updateEmployee(id, employee);
+    @PutMapping
+    public void updateEmployee(@RequestBody Employee employee) {
+        employeeService.updateEmployee(employee);
     }
 
     @DeleteMapping("/{id}")
