@@ -8,10 +8,10 @@
 		<version>3.2.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.ems</groupId>
+	<groupId>com.b2y</groupId>
 	<artifactId>b2y</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>b2y</name>
+	<name>ems</name>
 	<description>EMS for B2Y</description>
 	<properties>
 		<java.version>17</java.version>

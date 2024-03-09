@@ -1,19 +1,16 @@
 package com.b2y.ems.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
+@Table(name = "employee", schema = "ems")
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer employee_id;
-    private String first_name;
-    private String last_name;
-    private String email;
-    private String phone;
+    private Long id;
+
+    @Column(name = "tenant_id")
+    private String tenantId;
 }
